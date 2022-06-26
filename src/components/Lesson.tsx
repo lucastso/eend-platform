@@ -26,27 +26,21 @@ export function Lesson(props: LessonProps) {
 
   return (
     <Link to={`/event/lesson/${props.slug}`} className="group">
-      <span className="text-gray-300">{availableDateFormatted}</span>
+      <span className="text-gray-300 text-sm">{availableDateFormatted}</span>
 
       <div
         className={classNames(
-          "rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500",
+          "rounded border border-gray-500 p-4 mt-2 group-hover:border-blue-500",
           {
-            "bg-green-500": isActiveLesson,
+            "bg-blue-500": isActiveLesson,
+            "border-blue-500": isActiveLesson,
+            "border-gray-500": !isActiveLesson,
           }
         )}
       >
         <header className="flex items-center justify-between">
           {isLessonAvailable ? (
-            <span
-              className={classNames(
-                "flex gap-2 items-center text-sm font-medium",
-                {
-                  "text-white": isActiveLesson,
-                  "text-blue-500": !isActiveLesson,
-                }
-              )}
-            >
+            <span className="flex gap-2 items-center text-sm font-medium">
               <CheckCircle size={20} />
               Conteúdo liberado
             </span>
@@ -59,10 +53,12 @@ export function Lesson(props: LessonProps) {
 
           <span
             className={classNames(
-              "text-xs rounded px-2 py-[0.125rem] text-white border font-bold",
+              "text-xs rounded px-2 py-[0.125rem] border font-bold",
               {
-                "border-white": isActiveLesson,
-                "border-green-300": !isActiveLesson,
+                "border-white": props.type != "live",
+                "border-pink-500": props.type == "live",
+                "text-white": props.type != "live",
+                "text-pink-500": props.type == "live",
               }
             )}
           >
@@ -70,9 +66,9 @@ export function Lesson(props: LessonProps) {
           </span>
         </header>
         <strong
-          className={classNames("mt-5 block", {
-            "text-white": isActiveLesson,
-            "text-gray-200": !isActiveLesson,
+          className={classNames("mt-5 block text-white", {
+            "opacity-100": isActiveLesson,
+            "opacity-50": !isActiveLesson,
           })}
         >
           {props.title}

@@ -7,7 +7,7 @@ module.exports = {
         blur: "url(/src/assets/blur-background.png)",
       },
       fontFamily: {
-        sans: "Roboto, sans-serif",
+        sans: "Nunito, sans-serif",
       },
       colors: {
         green: {
@@ -16,10 +16,14 @@ module.exports = {
           700: "#015F43",
         },
         blue: {
-          500: "#81D8F7",
+          500: "#0047FF",
+          700: "#002687",
         },
         orange: {
-          500: "#FBA94C",
+          500: "#FFC047",
+        },
+        pink: {
+          500: "#FF1B8B",
         },
         red: {
           500: "#F75A68",
@@ -30,7 +34,8 @@ module.exports = {
           300: "#8D8D99",
           500: "#323238",
           600: "#29292E",
-          700: "#121214",
+          700: "#0F0F0F",
+          800: "#171717",
           900: "#09090A",
         },
       },

@@ -4,6 +4,7 @@ import {
   DiscordLogo,
   FileArrowDown,
   Lightning,
+  PictureInPicture,
 } from "phosphor-react";
 import "@vime/core/themes/default.css";
 import { useGetLessonBySlugQuery } from "../graphql/generated";
@@ -41,8 +42,8 @@ export function Video(props: VideoProps) {
       <div className="p-8 max-w-[1100px] mx-auto">
         <div className="flex items-start gap-16">
           <div className="flex-1">
-            <h1 className="text-2xl font-bold">{data.lesson.title}</h1>
-            <p className="mt-4 text-gray-200 leading-relaxed">
+            <h1 className="text-lg font-bold">{data.lesson.title}</h1>
+            <p className="mt-4 leading-relaxed text-sm">
               {data.lesson.description}
             </p>
 
@@ -51,10 +52,10 @@ export function Video(props: VideoProps) {
                 <img
                   src={data.lesson.teacher.avatarURL}
                   alt=""
-                  className="h-16 w-16 rounded-full border-2 border-blue-500"
+                  className="h-16 w-16 rounded-full border-2 border-white"
                 />
                 <div className="leading-relaxed">
-                  <strong className="font-bold text-2xl block">
+                  <strong className="font-bold text-lg block">
                     {data.lesson.teacher.name}
                   </strong>
                   <span className="text-gray-200 text-sm block">
@@ -68,17 +69,10 @@ export function Video(props: VideoProps) {
           <div className="flex flex-col gap-4">
             <a
               href=""
-              className="p-4 text-sm bg-green-500 hover:bg-green-700 flex items-center rounded font-bold uppercase gap-2 justify-center transition-colors"
+              className="p-4 text-sm bg-blue-500 hover:bg-blue-700 flex items-center rounded font-bold uppercase gap-2 justify-center transition-colors"
             >
               <DiscordLogo size={24} />
               Comunidade do Discord
-            </a>
-            <a
-              href=""
-              className="p-4 text-sm border border-blue-500 text-blue-500 flex items-center rounded font-bold uppercase gap-2 justify-center transition-colors hover:bg-blue-500 hover:text-gray-900"
-            >
-              <Lightning size={24} />
-              Acesse o Desafio
             </a>
           </div>
         </div>
@@ -86,13 +80,13 @@ export function Video(props: VideoProps) {
         <div className="gap-8 mt-20 grid grid-cols-2">
           <a
             href=""
-            className="col-span-1 bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+            className="col-span-1 bg-gray-700 rounded overflow-hidden flex items-stretch gap-6"
           >
-            <div className="bg-green-700 h-full p-6 flex items-center">
+            <div className="bg-gray-800 h-full p-6 flex items-center">
               <FileArrowDown size={40} />
             </div>
             <div className="py-6 leading-relaxed">
-              <strong className="text-2xl">Material complementar</strong>
+              <strong className="text-lg">Repositório no GitHub</strong>
               <p className="text-sm text-gray-200 mt-2">
                 Acesso o material complementar.
               </p>
@@ -103,13 +97,13 @@ export function Video(props: VideoProps) {
           </a>
           <a
             href=""
-            className="col-span-1 bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+            className="col-span-1 bg-gray-700 rounded overflow-hidden flex items-center jutify-between gap-6"
           >
-            <div className="bg-green-700 h-full p-6 flex items-center">
-              <FileArrowDown size={40} />
+            <div className="bg-gray-800 h-full p-6 flex items-center">
+              <PictureInPicture size={40} />
             </div>
             <div className="py-6 leading-relaxed">
-              <strong className="text-2xl">Wallpapers exclusivos</strong>
+              <strong className="text-lg">Wallpapers exclusivos</strong>
               <p className="text-sm text-gray-200 mt-2">
                 Acesso os wallpapers exclusivos.
               </p>
