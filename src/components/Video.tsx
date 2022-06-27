@@ -5,6 +5,7 @@ import {
   FileArrowDown,
   Lightning,
   PictureInPicture,
+  Spinner,
 } from "phosphor-react";
 import "@vime/core/themes/default.css";
 import { useGetLessonBySlugQuery } from "../graphql/generated";
@@ -22,7 +23,8 @@ export function Video(props: VideoProps) {
 
   if (!data || !data.lesson) {
     return (
-      <div className="flex-1">
+      <div className="flex-1 flex justify-center items-center text-sm gap-2">
+        <Spinner size={24} />
         <p>Carregando...</p>
       </div>
     );
@@ -91,9 +93,6 @@ export function Video(props: VideoProps) {
                 Acesso o material complementar.
               </p>
             </div>
-            <div className="h-full p-6 flex items-center">
-              <CaretRight />
-            </div>
           </a>
           <a
             href=""
@@ -107,9 +106,6 @@ export function Video(props: VideoProps) {
               <p className="text-sm text-gray-200 mt-2">
                 Acesso os wallpapers exclusivos.
               </p>
-            </div>
-            <div className="h-full p-6 flex items-center">
-              <CaretRight />
             </div>
           </a>
         </div>
